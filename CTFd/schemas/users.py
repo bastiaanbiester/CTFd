@@ -136,6 +136,12 @@ class UserSchema(ma.ModelSchema):
                         "Please confirm your current password", field_names=["confirm"]
                     )
 
+                name_changes = get_config("name_changes", default=True)
+                if bool(name_changes) is False:
+                    raise ValidationError(
+                        "Email changes are disabled", field_names=["name"]
+                    )
+
                 test = verify_password(
                     plaintext=confirm, ciphertext=current_user.password
                 )
