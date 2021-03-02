@@ -139,7 +139,7 @@ class UserSchema(ma.ModelSchema):
                 name_changes = get_config("name_changes", default=True)
                 if bool(name_changes) is False:
                     raise ValidationError(
-                        "Email changes are disabled", field_names=["name"]
+                        "Email changes are disabled", field_names=["email"]
                     )
 
                 test = verify_password(
