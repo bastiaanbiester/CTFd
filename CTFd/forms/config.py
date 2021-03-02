@@ -64,6 +64,12 @@ class AccountSettingsForm(BaseForm):
         choices=[("true", "Enabled"), ("false", "Disabled")],
         default="true",
     )
+    email_changes = SelectField(
+        "Email Changes",
+        description="Control whether users can change their email address",
+        choices=[("true", "Enabled"), ("false", "Disabled")],
+        default="true",
+    )
 
     submit = SubmitField("Update")
 
