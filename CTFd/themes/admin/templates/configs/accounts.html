@@ -2,8 +2,9 @@
 
 	{% set verify_emails = "true" if verify_emails == True else "false" %}
 	{% set name_changes = "true" if name_changes == True else "false" %}
+	{% set email_changes = "true" if email_changes == True else "false" %}
 	{% set team_creation = "false" if team_creation == False else "true" %}
-	{% with form = Forms.config.AccountSettingsForm(verify_emails=verify_emails, name_changes=name_changes, team_disbanding=team_disbanding, team_creation=team_creation) %}
+	{% with form = Forms.config.AccountSettingsForm(verify_emails=verify_emails, name_changes=name_changes, email_changes=email_changes, team_disbanding=team_disbanding, team_creation=team_creation) %}
 	<form method="POST" autocomplete="off" class="w-100">
 
 		<div class="form-group">
